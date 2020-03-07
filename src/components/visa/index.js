@@ -275,10 +275,10 @@ function getSteps() {
           </Router>
         </Select>
       </FormControl>
-         <div className={classes.root}>
-      <Stepper activeStep={activeStep} alternativeLabel className={classes.a1} style={{color:'rgb(234,205,128)'}}>
+         <div className={classes.root} style={{color:'rgb(234,205,128)'}}>
+      <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
-          <Step key={label}>
+          <Step key={label} style={{color:'rgb(234,205,128)'}}>
             <StepLabel>{label}</StepLabel>
           </Step>
         ))}
