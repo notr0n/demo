@@ -276,7 +276,7 @@ function getSteps() {
       <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
           <Step key={label} style={{color:'rgb(234,205,128)'}}>
-            <StepLabel style={{color:'rgb(234,205,128)'}}>{label}</StepLabel>
+            <StepLabel style={{color:yellow600}}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
