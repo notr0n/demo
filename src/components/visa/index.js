@@ -276,10 +276,10 @@ function getSteps() {
         </Select>
       </FormControl>
          <div className={classes.root}>
-      <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
+      <Stepper activeStep={activeStep} alternativeLabel className={classes.a1} style={{color:'rgb(234,205,128)'}}>
         {steps.map(label => (
           <Step key={label}>
-            <StepLabel style={{color:'rgb(234,205,128)'}}>{label}</StepLabel>
+            <StepLabel>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
