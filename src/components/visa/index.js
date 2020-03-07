@@ -224,7 +224,7 @@ function getSteps() {
             <h2 className={classes.text}>کشوری که از آن ویزا میخواهم</h2>
 
             <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">انتخاب کنید</InputLabel>
+        <InputLabel id="demo-simple-select-filled-label" style={{color:'red'}} >انتخاب کنید</InputLabel>
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
