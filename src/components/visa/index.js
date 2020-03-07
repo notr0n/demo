@@ -16,7 +16,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import yellow from '@material-ui/core/colors/yellow';
-const yellow600 = yellow[600]; 
 //Child Components
 import China from './country/china.js'
 import Azar from './country/azarbayejan.js'
@@ -31,18 +30,7 @@ import {
   Link
 } from "react-router-dom";
 
-
-const Dark = createMuiTheme({
-  overrides: {
-    MuiStepLabel: {
-      text: {
-        color: 'rgb(234,205,128)',
-      },
-    },
-  },
-});
-
-
+const primary = yellow[600];
 const useStyles = makeStyles(theme => ({
       bg: {
           position: 'relative',
@@ -277,8 +265,8 @@ function getSteps() {
          <div className={classes.root} style={{color:'rgb(234,205,128)'}}>
       <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
-          <Step key={label} style={{color:'rgb(234,205,128)'}}>
-            <StepLabel style={{color:yellow600}}>{label}</StepLabel>
+          <Step key={label}>
+            <StepLabel style={{color: primary}}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
