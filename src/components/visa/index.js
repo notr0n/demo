@@ -222,7 +222,7 @@ function getSteps() {
             />
             <img src={visaIMG} className={classes.IMG}/>
             <h2 className={classes.text}>کشوری که از آن ویزا میخواهم</h2>
-            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+
             <FormControl variant="filled" className={classes.formControl}>
         <InputLabel id="demo-simple-select-filled-label">انتخاب کنید</InputLabel>
         <Select
@@ -275,7 +275,6 @@ function getSteps() {
           </Router>
         </Select>
       </FormControl>
-      </MuiThemeProvider>
          <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
