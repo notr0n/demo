@@ -224,7 +224,7 @@ function getSteps() {
             <h2 className={classes.text}>کشوری که از آن ویزا میخواهم</h2>
 
             <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label" style={{color:'red'}} >انتخاب کنید</InputLabel>
+        <InputLabel id="demo-simple-select-filled-label" style={{color:'rgb(234,205,128)'}} >انتخاب کنید</InputLabel>
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
@@ -279,7 +279,7 @@ function getSteps() {
       <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
           <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel style={{color:'rgb(234,205,128)'}}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
