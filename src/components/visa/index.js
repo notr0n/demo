@@ -32,13 +32,9 @@ import {
 
 const Dark = createMuiTheme({
   overrides: {
-    // Style sheet name ⚛️
-    MuiButton: {
-      // Name of the rule
+    MuiStepLabel: {
       text: {
-        // Some CSS
-        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-        color: 'white',
+        color: 'rgb(234,205,128)',
       },
     },
   },
@@ -275,6 +271,7 @@ function getSteps() {
           </Router>
         </Select>
       </FormControl>
+      <ThemeProvider theme={Dark}>
          <div className={classes.root} style={{color:'rgb(234,205,128)'}}>
       <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
@@ -307,6 +304,8 @@ function getSteps() {
         )}
       </div>
     </div>
+    </ThemeProvider>
+          
     </center>
     </Blur>
     </div>
