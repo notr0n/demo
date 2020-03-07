@@ -279,14 +279,14 @@ function getSteps() {
       <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
           <Step key={label} style={{color:'rgb(234,205,128)'}}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel style={{color:'rgb(234,205,128)'}}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
       <div>
         {activeStep === steps.length ? (
           <div>
-            <Typography className={classes.instructions}>All steps completed</Typography>
+            <Typography className={classes.instructions}>به همین سادگی</Typography>
           </div>
         ) : (
           <div>
