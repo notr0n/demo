@@ -15,7 +15,6 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import yellow from '@material-ui/core/colors/yellow';
 //Child Components
 import China from './country/china.js'
 import Azar from './country/azarbayejan.js'
@@ -30,7 +29,7 @@ import {
   Link
 } from "react-router-dom";
 
-const primary = yellow[600];
+
 const useStyles = makeStyles(theme => ({
       bg: {
           position: 'relative',
@@ -48,6 +47,9 @@ const useStyles = makeStyles(theme => ({
           left: '50%',
           top: '33vh',
           
+      },
+      step:{
+          color: 'rgb(234,205,128)'
       },
       selectEmpty: {
           marginTop: theme.spacing(2),
@@ -261,12 +263,13 @@ function getSteps() {
           </Router>
         </Select>
       </FormControl>
-      <ThemeProvider theme={Dark}>
          <div className={classes.root} style={{color:'rgb(234,205,128)'}}>
       <Stepper activeStep={activeStep} alternativeLabel className={classes.a1}>
         {steps.map(label => (
           <Step key={label}>
-            <StepLabel style={{color: primary}}>{label}</StepLabel>
+            <StepLabel classes={{
+              labelContainer : classes.step
+            }} >{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
@@ -294,7 +297,6 @@ function getSteps() {
         )}
       </div>
     </div>
-    </ThemeProvider>
           
     </center>
     </Blur>
