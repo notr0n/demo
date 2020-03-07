@@ -2,7 +2,6 @@ import React from 'react';
 import Blur from 'react-blur';
 import bgIMG from '../../assets/img/homebg.jpg'
 import visaIMG from '../../assets/img/visa.png'
-import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -15,9 +14,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 //Child Components
 import China from './country/china.js'
 import Azar from './country/azarbayejan.js'
@@ -31,6 +28,21 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+
+const Dark = createMuiTheme({
+  overrides: {
+    // Style sheet name ⚛️
+    MuiButton: {
+      // Name of the rule
+      text: {
+        // Some CSS
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        color: 'white',
+      },
+    },
+  },
+});
 
 
 const useStyles = makeStyles(theme => ({
