@@ -56,6 +56,8 @@ const useStyles = makeStyles(theme => ({
     },
     menuitem: {
         fontSize: '4.5vw',
+        color:'rgb(234,205,128)',
+        backgroundColor:'#1B1B1B'
     }
 }));
 
@@ -74,7 +76,7 @@ export default function China() {
             <FormControl
             variant = "filled"
             className = {classes.formControl}>    
-            <InputLabel id = "demo-simple-select-filled-label" > نوع ویزا </InputLabel>
+            <InputLabel id = "demo-simple-select-filled-label" style={{color:'rgb(234,205,128)'}}> نوع ویزا </InputLabel>
             <Select labelId = "demo-simple-select-filled-label"
                 id = "demo-simple-select-filled"
                 value = {age}
