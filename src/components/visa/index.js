@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
           color: 'rgb(234,205,128)',
       },
       formControl: {
+          color: 'red',
           position: 'absolute',
           width: 200,
           backgroundColor: '#1B1B1B',
@@ -46,10 +47,13 @@ const useStyles = makeStyles(theme => ({
           transform: "translate(-50%, -50%)",
           left: '50%',
           top: '33vh',
+          textAlign: 'right',
+          direction: 'rtl',
           
       },
       step:{
-          color: 'rgb(234,205,128)'
+          color: 'rgb(234,205,128)',
+
       },
       selectEmpty: {
           marginTop: theme.spacing(2),
@@ -91,6 +95,7 @@ const useStyles = makeStyles(theme => ({
           top: '33%',
           left: '50%',
           transform: "translate(-50%, -50%)",
+          
       },
       chip: {
           color: '#BC9658',
@@ -99,6 +104,7 @@ const useStyles = makeStyles(theme => ({
           fontSize: 22,
           marginTop: 15,
           borderRadius: 15,
+          
       },
       chip2: {
           backgroundColor: 'rgb(234,205,128)',
@@ -106,6 +112,7 @@ const useStyles = makeStyles(theme => ({
           color: 'white',
           fontSize: 30,
           minWidth: 30,
+          
 
       },
       root: {
@@ -116,6 +123,7 @@ const useStyles = makeStyles(theme => ({
           transform: "translate(-50%, -50%)",
           top: '33%',
           left: '50%',
+          
 
       },
       backButton: {
@@ -123,10 +131,12 @@ const useStyles = makeStyles(theme => ({
           color: 'rgb(234, 205, 128)',
           borderColor: 'rgb(234, 205, 128)',
           fontFamily: 'Cairo',
+          
       },
       instructions: {
           marginTop: theme.spacing(1),
           marginBottom: theme.spacing(1),
+          
       },
       Btn: {
           backgroundColor: 'rgb(234, 205, 128)',
@@ -134,12 +144,19 @@ const useStyles = makeStyles(theme => ({
           fontFamily: 'Cairo',
           marginTop: '10',
           borderRadius:'17px'
+          
       },
       Btn2: {
           color: 'rgb(234, 205, 128)',
           borderColor: 'rgb(234, 205, 128)',
           fontFamily: 'Cairo',
-          borderRadius:'17px'
+          borderRadius:'17px',
+      },
+      menuitem: {
+        backgroundColor: '#1B1B1B',
+        color:'rgb(234,205,128)',
+        textAlign: 'center',
+        direction: 'rtl',
       }
   }));
 
@@ -180,7 +197,13 @@ function Visa2() {
     setAge(event.target.value);
   };
 function getSteps() {
-  return ['کشور موردنظر را انتخاب کنید', 'مدارک مورد نظر را آپلود کنید', 'فاکتور خود را پرداخت کنید'];
+  return [
+    <span style={{color:'rgb(234,205,128)', textAlign:'center'}}>کشور موردنظر را انتخاب کنید</span>
+    , 
+    <span style={{color:'rgb(234,205,128)', textAlign:'center'}}>مدارک مورد نظر را آپلود کنید</span>
+    ,
+    <span style={{color:'rgb(234,205,128)', textAlign:'center'}}>فاکتور خود را پرداخت کنید</span>
+  ];
 }
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -219,47 +242,47 @@ function getSteps() {
           value={age}
           onChange={handleChange}
         >
-          <MenuItem value="">
-            <em>-</em>
+          <MenuItem value="" style={{backgroundColor:'#1B1B1B'}}>
+            <em className={classes.menuitem}></em>
           </MenuItem>
           <Router>
               
-          <a href="/visa/china"><MenuItem value={10}>چین</MenuItem></a>
-          <MenuItem value={20}>روسیه</MenuItem>
-          <a href="/visa/azar"><MenuItem value={30}>آذربایجان</MenuItem></a>
-          <a href="/visa/india"><MenuItem value={40}>هند</MenuItem></a>
-          <a href="/visa/tiland"><MenuItem value={50}>تایلند</MenuItem></a>
-          <MenuItem value={60}>اندونزی</MenuItem>
-          <MenuItem value={70}>فیلیپین</MenuItem>
-          <MenuItem value={80}>مالزی</MenuItem>
-          <MenuItem value={90}>تایوان</MenuItem>
-          <MenuItem value={100}>ازبکستان</MenuItem>
-          <MenuItem value={110}>قزاقستان</MenuItem>
-          <MenuItem value={120}>تاجیکستان</MenuItem>
-          <MenuItem value={130}>افغانستان</MenuItem>
-          <MenuItem value={140}>هنگ کنگ</MenuItem>
-          <MenuItem value={150}>دبی</MenuItem>
-          <MenuItem value={160}>عمان</MenuItem>
-          <MenuItem value={170}>قطر</MenuItem>
-          <MenuItem value={180}>لبنان</MenuItem>
-          <MenuItem value={190}>سنگاپور</MenuItem>
-          <MenuItem value={200}>کره جنوبی</MenuItem>
-          <MenuItem value={210}>ویتنام</MenuItem>
-          <MenuItem value={220}>بنگلادش</MenuItem>
-          <MenuItem value={230}>بلاروس</MenuItem>
-          <MenuItem value={240}>کامبروج</MenuItem>
-          <MenuItem value={250}>برزیل</MenuItem>
-          <MenuItem value={260}>اوکراین</MenuItem>
-          <MenuItem value={270}>عراق</MenuItem>
-          <MenuItem value={280}>کانادا</MenuItem>
-          <MenuItem value={290}>ایتالیا</MenuItem>
-          <MenuItem value={300}>اتریش</MenuItem>
-          <MenuItem value={310}>هلند</MenuItem>
-          <MenuItem value={320}>فرانسه</MenuItem>
-          <MenuItem value={330}>آلمان</MenuItem>
-          <MenuItem value={340}>استرالیا</MenuItem>
-          <MenuItem value={350}>سوییس</MenuItem>
-          <MenuItem value={360}>انگلیس</MenuItem>
+          <a href="/visa/china" style={{textDecoration:'none', }}><MenuItem value={10} className={classes.menuitem}>چین</MenuItem></a>
+          <MenuItem value={20} className={classes.menuitem}>روسیه</MenuItem>
+          <a href="/visa/azar" style={{textDecoration:'none', }}><MenuItem value={30} className={classes.menuitem}>آذربایجان</MenuItem></a>
+          <a href="/visa/india" style={{textDecoration:'none', }}><MenuItem value={40} className={classes.menuitem}>هند</MenuItem></a>
+          <a href="/visa/tiland" style={{textDecoration:'none', }}><MenuItem value={50} className={classes.menuitem}>تایلند</MenuItem></a>
+          <MenuItem value={60} className={classes.menuitem}>اندونزی</MenuItem>
+          <MenuItem value={70} className={classes.menuitem}>فیلیپین</MenuItem>
+          <MenuItem value={80} className={classes.menuitem}>مالزی</MenuItem>
+          <MenuItem value={90} className={classes.menuitem}>تایوان</MenuItem>
+          <MenuItem value={100} className={classes.menuitem}>ازبکستان</MenuItem>
+          <MenuItem value={110} className={classes.menuitem}>قزاقستان</MenuItem>
+          <MenuItem value={120} className={classes.menuitem}>تاجیکستان</MenuItem>
+          <MenuItem value={130} className={classes.menuitem}>افغانستان</MenuItem>
+          <MenuItem value={140} className={classes.menuitem}>هنگ کنگ</MenuItem>
+          <MenuItem value={150} className={classes.menuitem}>دبی</MenuItem>
+          <MenuItem value={160} className={classes.menuitem}>عمان</MenuItem>
+          <MenuItem value={170} className={classes.menuitem}>قطر</MenuItem>
+          <MenuItem value={180} className={classes.menuitem}>لبنان</MenuItem>
+          <MenuItem value={190} className={classes.menuitem}>سنگاپور</MenuItem>
+          <MenuItem value={200} className={classes.menuitem}>کره جنوبی</MenuItem>
+          <MenuItem value={210} className={classes.menuitem}>ویتنام</MenuItem>
+          <MenuItem value={220} className={classes.menuitem}>بنگلادش</MenuItem>
+          <MenuItem value={230} className={classes.menuitem}>بلاروس</MenuItem>
+          <MenuItem value={240} className={classes.menuitem}>کامبروج</MenuItem>
+          <MenuItem value={250} className={classes.menuitem}>برزیل</MenuItem>
+          <MenuItem value={260} className={classes.menuitem}>اوکراین</MenuItem>
+          <MenuItem value={270} className={classes.menuitem}>عراق</MenuItem>
+          <MenuItem value={280} className={classes.menuitem}>کانادا</MenuItem>
+          <MenuItem value={290} className={classes.menuitem}>ایتالیا</MenuItem>
+          <MenuItem value={300} className={classes.menuitem}>اتریش</MenuItem>
+          <MenuItem value={310} className={classes.menuitem}>هلند</MenuItem>
+          <MenuItem value={320} className={classes.menuitem}>فرانسه</MenuItem>
+          <MenuItem value={330} className={classes.menuitem}>آلمان</MenuItem>
+          <MenuItem value={340} className={classes.menuitem}>استرالیا</MenuItem>
+          <MenuItem value={350} className={classes.menuitem}>سوییس</MenuItem>
+          <MenuItem value={360} className={classes.menuitem}>انگلیس</MenuItem>
           </Router>
         </Select>
       </FormControl>
